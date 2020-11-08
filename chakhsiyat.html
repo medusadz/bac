@@ -1,0 +1,72 @@
+<html dir="rtl" lang="ar">
+  <head>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+ 	<title>home</title>
+	<script src="js/database.js"></script> 
+		<script>
+var x = document.getElementsByClassName("ans");
+var i=0;
+function my(ans){
+var answer = ans.innerHTML;
+if(answer == d[i].y){
+ans.style.background="rgba(0, 206, 0, 0.56)";
+setTimeout(function(){ ans.style.background="#3598DB";},200);
+i++;
+if(i < d.length){
+load(i);
+}
+else{
+setTimeout(function(){window.open('doua.html');},200);
+}
+}
+else{
+ans.style.background="rgba(251, 0, 0, 0.7)";
+setTimeout(function(){ ans.style.background="#3598DB";},500);
+}
+}
+function load(t){
+document.getElementById("shakhsiy").innerHTML = d[t].chakh;
+x[0].innerHTML = d[t].y0;
+x[1].innerHTML = d[t].y1;
+}
+	</script> 
+  </head>
+<body onload="load(i)">
+<div id="header">
+<img src="photo/home.png" width="50px" style="
+    position: absolute;
+    top: 0;
+    right: 0;
+	border-left:#004838 solid 1px;
+" onClick="window.open('index.html');">
+
+<div id="menu"><ul>
+<li><a href="bacount.html"><img src="photo/clock.png" width="50px" onClick=""></li></a>
+<li><a href="zaman.html"><img src="photo/zaman.png" width="50px" onClick=""></li></a>
+<li><a href="tawarikh.html"><img src="photo/qst.png" width="50px" onClick=""></li></a>
+<li><a href="chakhday.html"><img src="photo/chakh.png" width="50px" onClick=""></li></a>
+<li><a href="chakhsiyat.html"><img src="photo/book.png" width="50px" onClick=""></li></a>
+</ul></div>
+<div style="margin-top: -16px;">
+<div class="border" style="background-color: #1abc9c;"></div>
+<div class="border" style="background-color: #3498db;"></div>
+<div class="border" style="background-color: #9b59b6;"></div>
+<div class="border" style="background-color: #34495e;"></div>
+<div class="border" style="background-color: #e74c3c;"></div>
+<div class="border" style="background-color: #95a5a6;"></div>
+</div>
+</div>
+<center>
+<h1>إحزر من ؟</h1>
+<div id="tawarikh">
+<p id="shakhsiy"></p>
+</br>
+<div id="choice">
+<p class="ans" onClick="my(x[0])"></p>
+<p class="ans" onClick="my(x[1])"></p>
+</div>
+</div>
+</center>
+</body>
+</html> 

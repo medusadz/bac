@@ -1,0 +1,69 @@
+<html dir="rtl" lang="ar">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/todo.css" />
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	
+ 	<title></title>
+		<script>
+		if(typeof(localStorage.zaman) !== 'undefined'){
+		var obj = JSON.parse(localStorage.getItem("zaman"));
+		}
+	else{var obj = [];}
+
+function push(){
+obj.push({todo: document.getElementById("todo").value});
+localStorage.setItem("zaman", JSON.stringify(obj));
+document.getElementById("todo").value = "";
+show(1);
+}  
+
+// function that delete an item (a)	
+function dleteitem(a){
+if(a == -1 || obj.length == 1){
+localStorage.removeItem("zaman");
+show(0);
+}
+else{
+obj.splice(a, 1);
+localStorage.setItem("zaman", JSON.stringify(obj));
+show(1);
+}
+}
+</script> 
+</head>
+<body onload="show(1)">
+<div id="header"></div>
+<center>
+<div id="middle">
+<div id="put">
+<h1>لا يوجد شيئ !</h1>
+</div></br>
+<div id="clicker">
+<input id="todo" placeholder="ملاحظة ..." type="text" size="16">
+<button onClick="push()">OK</button>
+
+</div></br></br>
+<button onClick="dleteitem(-1)" id="dlt">X</button>
+</div>
+</center>
+<script src="js/header.js"></script>
+<script>
+function show(t){
+if(t == 0){
+document.getElementById("put").innerHTML = '<h1>لا يوجد شيئ !</h1>';
+}
+else{
+if(typeof(localStorage.zaman) !== 'undefined'){
+var x=JSON.parse(localStorage.getItem("zaman"));
+    var out = "";
+    for(var i = 0; i < x.length; i++) {
+		 out += '<p>' + x[i].todo + '<a onClick="dleteitem('+ i +')">X</a></p>';
+    }
+	document.getElementById("put").innerHTML = out;
+}
+}
+}
+</script>
+</body>
+</html> 

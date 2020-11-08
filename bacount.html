@@ -1,0 +1,106 @@
+<html dir="rtl" lang="ar">
+  <head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	    <link rel="stylesheet" type="text/css" href="css/bacount.css" />
+ 	<title>كم بقي للباك</title>
+	<script src="js/database.js"></script> 
+</head>
+<body>
+<div id="header">
+<img src="photo/home.png" width="50px" style="
+    position: absolute;
+    top: 0;
+    right: 0;
+	border-left:#004838 solid 1px;
+" onClick="window.open('index.html');">
+
+<div id="menu"><ul>
+<li><a href="bacount.html"><img src="photo/clock.png" width="50px" onClick=""></li></a>
+<li><a href="zaman.html"><img src="photo/zaman.png" width="50px" onClick=""></li></a>
+<li><a href="tawarikh.html"><img src="photo/qst.png" width="50px" onClick=""></li></a>
+<li><a href="chakhday.html"><img src="photo/chakh.png" width="50px" onClick=""></li></a>
+<li><a href="chakhsiyat.html"><img src="photo/book.png" width="50px" onClick=""></li></a>
+</ul></div>
+<div style="margin-top: -16px;">
+<div class="border" style="background-color: #1abc9c;"></div>
+<div class="border" style="background-color: #3498db;"></div>
+<div class="border" style="background-color: #9b59b6;"></div>
+<div class="border" style="background-color: #34495e;"></div>
+<div class="border" style="background-color: #e74c3c;"></div>
+<div class="border" style="background-color: #95a5a6;"></div>
+</div>
+</div>
+<center>
+<h1>كم بقي على BAC</h1>
+<div id="clockdiv">
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+    <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+    <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+</div>
+  <div id="ahdaf">
+  <h1>أهدافي :</h1>
+  <p id="hadafi"></p>
+  </div>
+  </center>
+  <script>
+  document.getElementById("hadafi").innerHTML = c[i];
+  </script>
+<script>
+function getTimeRemaining() {
+var endtime = '2016-05-29';
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+initializeClock('clockdiv', deadline);
+</script>
+</body>
+</html> 

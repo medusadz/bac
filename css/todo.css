@@ -1,0 +1,47 @@
+#put p {
+	position: relative;
+}
+#put p a {
+   left: 0px;
+    position: absolute;
+    background-color: #2980b9;
+    width: 50px;
+    height: 100%;
+}
+#clicker {
+	width:80%;
+	position: relative;
+}
+#todo{
+    height: 40px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: #3598DB solid 1px;
+	border-left: 0;
+	width: calc(100% - 49px);
+    position: absolute;
+    right: 0;
+	padding-right: 10px;
+	font-family:"DroidKufi", sans-serif;
+}
+#clicker button {
+    background: #2980B9;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    height: 40px;
+    border: 0;
+    color: #fff;
+}
+#dlt {
+    background: #e74c3c;
+    width: 30px;
+    position: fixed;
+    height: 30px;
+    border: 0;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 60px;
+    left: 5px;
+    bottom: 30px;
+}

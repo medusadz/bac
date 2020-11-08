@@ -1,0 +1,48 @@
+<html dir="rtl" lang="ar">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	
+ 	<title>حفظ الشخصيات</title>
+		<script src="js/database.js"></script> 
+		<script>
+</script> 
+</head>
+<body>
+<div id="header">
+<img src="photo/home.png" width="50px" style="
+    position: absolute;
+    top: 0;
+    right: 0;
+	border-left:#004838 solid 1px;
+" onClick="window.open('index.html');">
+
+<div id="menu"><ul>
+<li><a href="bacount.html"><img src="photo/clock.png" width="50px" onClick=""></li></a>
+<li><a href="zaman.html"><img src="photo/zaman.png" width="50px" onClick=""></li></a>
+<li><a href="tawarikh.html"><img src="photo/qst.png" width="50px" onClick=""></li></a>
+<li><a href="chakhday.html"><img src="photo/chakh.png" width="50px" onClick=""></li></a>
+<li><a href="chakhsiyat.html"><img src="photo/book.png" width="50px" onClick=""></li></a>
+</ul></div>
+<div style="margin-top: -16px;">
+<div class="border" style="background-color: #1abc9c;"></div>
+<div class="border" style="background-color: #3498db;"></div>
+<div class="border" style="background-color: #9b59b6;"></div>
+<div class="border" style="background-color: #34495e;"></div>
+<div class="border" style="background-color: #e74c3c;"></div>
+<div class="border" style="background-color: #95a5a6;"></div>
+</div>
+</div>
+<center>
+<h1>شخصية اليوم :</h1>
+<div id="shakhsiya">
+<p id="alism" style="width:60%;"></p>
+</br>
+<p id="taarif"></p>
+</center>
+<script>
+document.getElementById("alism").innerHTML = d[t-1].y;
+document.getElementById("taarif").innerHTML = d[t-1].chakh;
+</script> 
+</body>
+</html> 
